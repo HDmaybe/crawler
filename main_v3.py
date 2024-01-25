@@ -31,7 +31,7 @@ dex = 1
 base_url = "https://ba-on.com"
 headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
 
-response1 = requests.get(base_url, headers=headers, timeout=10 )
+response1 = requests.get(base_url, headers=headers)
 soup1 = bs(response1.text, "html.parser")
 
 category_list =soup1.select('div.Menu_list ul li a')
@@ -43,12 +43,12 @@ for category in category_list:
         continue
 
     url2 = base_url + category['href']
-    response2 = requests.get(url2, headers=headers , timeout=10)
+    response2 = requests.get(url2, headers=headers)
     soup2 = bs(response2.text, "html.parser")
     category_lv2s = soup2.select('ul.menuCategory li a')
     for category_lv2 in category_lv2s:
         base_url_cat2 = base_url + category_lv2['href']
-        response_instance = requests.get(base_url_cat2 + "?page=1",headers=headers , timeout=10)
+        response_instance = requests.get(base_url_cat2 + "?page=1",headers=headers)
         soup4 = bs(response_instance.text, "html.parser")
         final_page_tag = soup4.select_one('.last')['href']        
         
@@ -59,7 +59,7 @@ for category in category_list:
         
         for page_no in range(1, int(iteration)+1 ):
             item_list_url = base_url_cat2 +  f"?page={page_no}"
-            response = requests.get(item_list_url, headers=headers, timeout=10)
+            response = requests.get(item_list_url, headers=headers)
             soup3 = bs(response.text, "html.parser")
             item_list = soup3.select('div.xans-product-normalpackage li.xans-record-')
             if item_list is not None:
@@ -95,7 +95,7 @@ for category in category_list:
                         insert_query = """
                         INSERT INTO baon.items (pid, category1, category2, url, product, price, sale, img) 
                         VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"""
-                        data = (product_id, category_lv1, category_lv2.get_text(), href, name, price, sale_price, img_src)
+                        data = (product_id, category_lv1, category_lv2.get_text().split()[0], href, name, price, sale_price, img_src)
                         cursor.execute(insert_query, data)
                 
                 except Exception as e:
