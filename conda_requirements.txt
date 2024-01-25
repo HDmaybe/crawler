@@ -1,0 +1,42 @@
+name: crawler
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - beautifulsoup4=4.12.2=py310hca03da5_0
+  - brotli-python=1.0.9=py310hc377ac9_7
+  - bzip2=1.0.8=h620ffc9_4
+  - ca-certificates=2023.11.17=hf0a4a13_0
+  - certifi=2023.11.17=pyhd8ed1ab_0
+  - cffi=1.16.0=py310h80987f9_0
+  - charset-normalizer=2.0.4=pyhd3eb1b0_0
+  - colorama=0.4.6=pyhd8ed1ab_0
+  - cryptography=41.0.7=py310hd4332d6_0
+  - idna=3.4=py310hca03da5_0
+  - krb5=1.20.1=h69eda48_0
+  - libcxx=14.0.6=h848a8c0_0
+  - libedit=3.1.20191231=hc8eb9b7_2
+  - libffi=3.4.4=hca03da5_0
+  - libpq=12.15=h02f6b3c_1
+  - ncurses=6.4=h313beb8_0
+  - openssl=3.2.0=h0d3ecfb_1
+  - pip=23.3.1=py310hca03da5_0
+  - psycopg2=2.9.9=py310h80987f9_0
+  - psycopg2-binary=2.9.9=pyhd8ed1ab_0
+  - pycparser=2.21=pyhd3eb1b0_0
+  - pyopenssl=23.2.0=py310hca03da5_0
+  - pysocks=1.7.1=py310hca03da5_0
+  - python=3.10.13=hb885b13_0
+  - readline=8.2=h1a28f6b_0
+  - requests=2.31.0=py310hca03da5_0
+  - setuptools=68.2.2=py310hca03da5_0
+  - soupsieve=2.5=py310hca03da5_0
+  - sqlite=3.41.2=h80987f9_0
+  - tk=8.6.12=hb8d0fd4_0
+  - tqdm=4.66.1=pyhd8ed1ab_0
+  - tzdata=2023d=h04d1e81_0
+  - urllib3=1.26.18=py310hca03da5_0
+  - wheel=0.41.2=py310hca03da5_0
+  - xz=5.4.5=h80987f9_0
+  - zlib=1.2.13=h5a0b063_0
+prefix: /Users/yoonheegeon/anaconda3/envs/crawler

@@ -2,7 +2,6 @@ import requests
 from bs4 import BeautifulSoup as bs
 import traceback
 import re
-from tqdm import tqdm
 import psycopg2
 
 db_params = {
